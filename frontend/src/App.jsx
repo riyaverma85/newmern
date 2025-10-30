@@ -1,35 +1,58 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import{BrowserRouter,Routes,Route}from "react-router-dom";
+// import Layout from "./layout";
+// import Insert from "./pages/insert";
 
-function App() {
-  const [count, setCount] = useState(0)
+// const App=()=>{
+//   return(
+//     <>
+// <BrowserRouter>
+// <Routes>
+//   <Route path ="/" element={<Layout/>}>
+//   <Route index element ={<Home/>}/>
+//   <Route path="home" element={<Home/>}/>
+//    <Route path="Insert" element={<Insert/>}/>
+//     <Route path="display" element={<Display/>}/>
+//      <Route path="update" element={<update/>}/>
+//       <Route path="search" element={<search/>}/>
+//       </Route>
+// </Routes>
+// </BrowserRouter>
+//     </>
+//   )
+// }
+// export default App;
 
+
+
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/home";
+import Insert from "./pages/insert";
+import Display from "./pages/Display";
+import Update from "./pages/update";
+import Layout from "./layout";
+// import Layout from "./Layout";
+// import Insert from "./pages/Insert";
+// import Home from "./pages/Home";
+// import Display from "./pages/display";
+// import Update from "./pages/Update";
+// import Search from "./pages/Search";
+
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <BrowserRouter>
+      <Routes>
+          <Route path="/" element={<Layout/>}/>
+          <Route index element={<Home/>}/>
+           <Route path="home" element={<Home/>}/>
+       <Route path="insert" element={<Insert/>}/>
+          <Route path="display" element={<Display/>}/>
+         <Route path="update" element={<Update/>}/>
+          <Route path="search" element={<search/>}/>
+        </Routes>
+      
+    </BrowserRouter>
+  );
+};
 
-export default App
+export default App;

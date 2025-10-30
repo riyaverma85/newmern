@@ -1,0 +1,5 @@
+const Search = () => 
+
+<h2>Search Page</h2>;
+
+export default Search;
